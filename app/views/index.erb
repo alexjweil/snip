@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=ENV['site_url']%></title>
+	<link href="css/bootstrap.min.css" media="all" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container">
+		<h1 class='text-center'><%=ENV['site_name']%></h1>
+		<form class="form-inline text-center" method="post">
+			<div class="form-group">
+				<div class="input-group input-group-lg">
+					<div class="input-group-addon">http://</div>
+					<input type="text" class="form-control" name="url" id="url" value="<%= escape_html(params[:url]) %>" placeholder="Some Long URL">
+				</div>
+			</div>
+			<button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>
+		</form>
+		<% if @shortcode %>
+		<div class="panel panel-default text-center" style="margin-top: 10px">
+			<h3>Your shortened URL is:
+			<% short_url = ENV['site_url'] + '/' + @shortcode %>
+			<a href="http://<%= short_url %>">http://<%= short_url %></a></h3>
+		</div>
+		<% end %>
+	</div>
+</body>

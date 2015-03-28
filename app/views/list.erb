@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=ENV['site_name']%></title>
+	<link href="./css/bootstrap.min.css" media="all" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container">
+		<table class="table table-bordered table-hover" border="1">
+			<% @sites.each do |pair| %>
+			<tr>
+				<td><a<href="<%=pair[0]%>"> <%=pair[0]%> </td>
+				<td><a<href="<%=pair[1]%>"> <%=pair[1]%> </td>
+			</tr>
+			<% end %>
+		</table>				
+	</div>
+</body>
