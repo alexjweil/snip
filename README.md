@@ -1,4 +1,4 @@
- # Snip
+# Snip
 
 
 To build (with Ruby >= 1.9), clone the repo, then run:
